@@ -2,6 +2,7 @@
 
 To start your Phoenix server:
 
+  * Run a postgres on `localhost:5432`
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
   * Start Phoenix endpoint with `mix phx.server`
