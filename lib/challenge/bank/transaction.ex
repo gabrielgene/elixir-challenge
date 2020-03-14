@@ -15,7 +15,8 @@ defmodule Challenge.Bank.Transaction do
   @doc false
   def changeset(transaction, attrs) do
     transaction
-    |> cast(attrs, [:sender, :address, :amount, :when])
-    |> validate_required([:sender, :address, :amount, :when])
+    |> Map.put(:when, DateTime.utc_now)
+    |> cast(attrs, [:sender, :address, :amount])
+    |> validate_required([:sender, :address, :amount])
   end
 end
