@@ -5,13 +5,12 @@ defmodule ChallengeWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", ChallengeWeb do
+  scope "/" do
     pipe_through :api
 
     forward "/graphiql", Absinthe.Plug.GraphiQL,
-    schema: BankWeb.Schema
-
-    forward "/", Absinthe.Plug,
-      schema: BankWeb.Schema
+      schema: ChallengeWeb.Schema,
+      interface: :simple,
+      context: %{pubsub: ChallengeWeb.Endpoint}
   end
 end
