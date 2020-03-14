@@ -14,8 +14,9 @@ defmodule ChallengeWeb.Resolvers.Accounts do
       {:ok, account} ->
         {:ok, account}
 
-      _error ->
-        {:error, "Can't create account"}
+      {:error, changeset} ->
+        {message, _value} = changeset.errors[:current_balance]
+        {:error, message}
       end
   end
 
