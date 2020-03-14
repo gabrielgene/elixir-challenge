@@ -8,6 +8,10 @@ defmodule Challenge.Bank do
 
   alias Challenge.Bank.Account
 
+  def find_account(id) do
+    Repo.get(Account, id)
+  end
+
   @doc """
   Returns the list of accounts.
 
