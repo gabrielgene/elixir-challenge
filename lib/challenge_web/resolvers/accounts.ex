@@ -1,7 +1,7 @@
-defmodule ChanllengeWeb.Resolvers.Accounts do
+defmodule ChallengeWeb.Resolvers.Accounts do
 
   def find_account(_parent, %{id: id}, _resolution) do
-    case Bank.Bank.find_account(id) do
+    case Challenge.Bank.find_account(id) do
       nil ->
         {:error, "Account ID #{id} not found"}
       user ->
@@ -10,11 +10,11 @@ defmodule ChanllengeWeb.Resolvers.Accounts do
   end
 
   def create_account(_parent, %{balance: balance}, _resolution) do
-    case Bank.Bank.create_account(%{:current_balance => balance}) do
+    case Challenge.Bank.create_account(%{:current_balance => balance}) do
       {:ok, account} ->
         {:ok, account}
 
-      error ->
+      _error ->
         {:error, "Can't create account"}
       end
   end
