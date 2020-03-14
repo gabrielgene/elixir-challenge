@@ -121,6 +121,11 @@ defmodule Challenge.Bank do
     Repo.all(Transaction)
   end
 
+  def list_transactions_by_sender_id(id) do
+    Repo.all(from t in Transaction, where: t.sender == ^id)
+  end
+
+
   @doc """
   Gets a single transaction.
 
