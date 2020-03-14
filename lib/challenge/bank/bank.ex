@@ -8,12 +8,6 @@ defmodule Challenge.Bank do
 
   alias Challenge.Bank.Account
 
-  def create_account(attrs \\ %{}) do
-    %Account{}
-    |> Account.changeset(attrs)
-    |> Repo.insert()
-  end
-
   def find_account(id) do
     Repo.get(Account, id)
   end
