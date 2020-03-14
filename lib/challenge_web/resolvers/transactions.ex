@@ -9,4 +9,13 @@ defmodule ChallengeWeb.Resolvers.Transactions do
       end
   end
 
+  def list_transactions(%{id: id}, _args, _resolution) do
+    case Challenge.Bank.list_transactions_by_sender_id("#{id}") do
+      nil ->
+        {:error, "Account ID #{id} not found"}
+      transactions ->
+        {:ok, transactions}
+    end
+  end
+
 end
