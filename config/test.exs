@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :challenge, Challenge.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "gene1",
+  password: "gene1",
   database: "challenge_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

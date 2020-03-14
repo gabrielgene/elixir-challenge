@@ -39,8 +39,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :challenge, Challenge.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "gene1",
+  password: "gene1",
   database: "challenge_dev",
   hostname: "localhost",
   pool_size: 10
